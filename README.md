@@ -1,0 +1,1 @@
+Sources for the study *Evaluation of depth perception in crowded volumes*. This repository contains the augmented VPT framework with the Volume Conductor interface, the survey web application, and the code for the data analysis.

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Distance estimation in volume data - User Study Evaluation</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,500,700,800,900" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="logos">
+            <a href="https://www.fri.uni-lj.si/"><img class="ulfrilogo" src="images/UL-FRI.png"></a>
+        </div>
+
+        <h1 lang="en">Distance estimation in volumetric data</h1>
+        <h1 lang="si">Ocenjevanje razdalj v volumetričnih podatkih</h1>
+
+        <h2 lang="en">- User study -</h2>
+        <h2 lang="si">- Uporabniška študija -</h2>
+
+        <p lang="en">Welcome!</p>
+        <p lang="si">Pozdravljeni!</p>
+
+        <p lang="en">Volumetric data is information about the inside of something in 3D - it's like being able to see and measure what's inside an object, for instance, a loaf of bread, a cloud, or a human body, and not just the outside. This kind of data helps doctors, meteorologists, physicists, and geologists to see and understand things in three dimensions rather than just flat pictures. There are many different techniques for visualizing such data, which all affect your spatial perception in different ways.</p>
+        <p lang="si">Volumetrični podatki so podatki, ki opisujejo notranjost nečesa tridimenzionalnega - naj bo to hlebec kruha, oblak ali človeško telo. Tovrstni podatki pomagajo zdravnikom, meteorologom, fizikom in geologom razumeti naravne pojave precej bolje kot le 2D slike. Obstaja mnogo različnih tehnik za vizualizacijo volumetričnih podatkov, ki na različne načine vplivajo na vašo prostorsko predstavo.</p>
+
+        <p lang="en">As part of our study, we are interested in how different volumetric rendering techniques affect the preceived distance between structures in volumetric data. The results of this study will help us design even better visualization techniques.</p>
+        <p lang="si">S to uporabniško študijo želimo ugotoviti, kako različne vizualizacijske tehnike vplivajo na zaznavanje razdalj med strukturami v volumetričnih podatkih. Rezultati študije nam bodo pomagali načrtovati še boljše vizualizacijske tehnike.</p>
+
+        <div class="spacer"></div>
+
+        <a lang="en" class="start" href="instructions.html">NEXT</a>
+        <a lang="si" class="start" href="instructions.html">NAPREJ</a>
+
+        <div class="spacer"></div>
+
+        <p lang="en" class="tiny">By starting the evaluation session you agree to the use of cookies that are essential for the functionality of this website: language settings and the current state of the evaluation session.</p>
+        <p lang="si" class="tiny">Z začetkom evalvacijske seje soglašate z uporabo piškotkov, ki so nujni za delovanje tega spletišča: nastavitve jezika in trenutno stanje evalvacijske seje.</p>
+
+        <div class="logos">
+            <a href="http://lgm.fri.uni-lj.si/"><img class="lgmlogo" src="images/LGM-logo.png"></a>
+        </div>
+
+        <div class="lang-selection">
+            <a href="?lang=si"><img src="images/si.png" lang="en" class="lang"></a>
+            <a href="?lang=en"><img src="images/en.png" lang="si" class="lang"></a>
+        </div>
+    </div>
+    <script>
+        const english = document.querySelectorAll('[lang="en"]');
+        const slovene = document.querySelectorAll('[lang="si"]');
+
+        const searchParams = (new URL(window.location)).searchParams;
+
+        const lang = searchParams.get('lang') ?? localStorage.getItem('lang') ?? 'en';
+        localStorage.setItem('lang', lang);
+
+        if (lang === 'en') {
+            for (const element of slovene) {
+                element.remove();
+            }
+        } else if (lang === 'si') {
+            for (const element of english) {
+                element.remove()
+            }
+        }
+
+        if (lang === 'en') {
+            document.title = 'Distance estimation in volumetric data - User study';
+        } else if (lang === 'si') {
+            document.title = 'Ocenjevanje razdalj v volumetričnih podatkih - Uporabniška študija';
+        }
+    </script>
+</body>
+</html>

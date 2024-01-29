@@ -1,0 +1,113 @@
+.group-label-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.group-label {
+    cursor: text;
+}
+
+.group-move {
+    width: 50px;
+    height: 18px;
+    background-image: url(../../../images/icons/reorder-two-outline.svg);
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-size: 50px 18px;
+}
+
+.group-move:hover {
+    cursor: move;
+}
+
+.group-delete {
+    width: 18px;
+    height: 18px;
+    background-image: url(../../../images/icons/close-outline.svg);
+    background-position: 1px 50%;
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+.group-delete:hover {
+    background-color: #faa;
+}
+
+.predicate-box {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.predicate-header {
+    width: 100%;
+    text-align: center;
+    line-height: 18px;
+}
+
+.predicate-add {
+    width: 60%;
+    margin: auto;
+}
+
+.predicate {
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+}
+
+.predicate.highlight-src {
+    background: lightseagreen;
+}
+
+.predicate.highlight-dst {
+    background: lightskyblue;
+}
+
+ui-accordion.highlight-src {
+    background: lightseagreen;
+}
+
+ui-accordion.highlight-dst {
+    background: lightskyblue;
+}
+
+.predicate-operation {
+    flex: 0 0 18px;
+    text-align: center;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.predicate-value {
+    flex: 1 1 100px;
+}
+
+.predicate-move {
+    height: 18px;
+    flex: 0 0 50px;
+    background-image: url(../../../images/icons/reorder-two-outline.svg);
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-size: 50px 18px;
+}
+
+.predicate-move:hover {
+    cursor: move;
+}
+
+.predicate-delete {
+    width: 18px;
+    flex: 0 0 18px;
+    background-image: url(../../../images/icons/close-outline.svg);
+    background-position: 1px 50%;
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+.predicate-delete:hover {
+    background-color: #faa;
+}

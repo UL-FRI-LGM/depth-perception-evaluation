@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,500,700,800,900" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+
+    <script type="module" src="demographic.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="logos">
+            <a href="https://www.fri.uni-lj.si/"><img class="ulfrilogo" src="images/UL-FRI.png"></a>
+        </div>
+
+        <h1 lang="en">Distance estimation in volumetric data</h1>
+        <h1 lang="si">Ocenjevanje razdalj v volumetričnih podatkih</h1>
+
+        <h2 lang="en">- User Study -</h2>
+        <h2 lang="si">- Uporabniška študija -</h2>
+
+        <div class="form">
+            <h3 lang="en">Demographic data</h3>
+            <h3 lang="si">Demografski podatki</h3>
+            <table>
+                <tr>
+                    <td class="right" lang="en">Gender:</td>
+                    <td class="right" lang="si">Spol:</td>
+                    <td class="left">
+                        <span id="gender">
+                            <input type="radio" id="male" name="gender" value="M">
+                            <label for="male" lang="en">Male</label>
+                            <label for="male" lang="si">Moški</label>
+                            <input type="radio" id="female" name="gender" value="Z">
+                            <label for="female" lang="en">Female</label>
+                            <label for="female" lang="si">Ženska</label>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        <label for="age" lang="en">Age:</label>
+                        <label for="age" lang="si">Starost:</label>
+                    </td>
+                    <td class="left">
+                        <input type="number" id="age" min="1" max="150">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        <label for="occupation" lang="en">Occupation:</label>
+                        <label for="occupation" lang="si">Poklic:</label>
+                    </td>
+                    <td class="left">
+                        <input type="text" id="occupation" size="32">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        <label for="email" lang="en">E-mail (optional):</label>
+                        <label for="email" lang="si">E-pošta (opcijsko):</label>
+                    </td>
+                    <td class="left">
+                        <input type="email" id="email" size="32">
+                    </td>
+                </tr>
+            </table>
+
+            <div class="spacer"></div>
+
+            <h3 lang="en">Experience with 3D environments</h3>
+            <h3 lang="si">Izkušnje s 3D okolji</h3>
+            <table>
+                <tr>
+                    <td class="right">
+                        <span lang="en">3D modeling:</span>
+                        <span lang="si">3D modeliranje:</span>
+                    </td>
+                    <td class="left">
+                        <div class="demographic-slider-container">
+                            <span lang="en">Low</span>
+                            <span lang="si">Malo</span>
+                            <div class="demographic-slider">
+                                <input class="frange" type="range" id="modeling" name="modeling" min="1" max="5" value="3" list="markers">
+                            </div>
+                            <span lang="en">High</span>
+                            <span lang="si">Veliko</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        <span lang="en">Gaming:</span>
+                        <span lang="si">Video igre:</span>
+                    </td>
+                    <td class="left">
+                        <div class="demographic-slider-container">
+                            <span lang="en">Low</span>
+                            <span lang="si">Malo</span>
+                            <div class="demographic-slider">
+                                <input class="frange" type="range" id="gaming" name="gaming" min="1" max="5" value="3" list="markers">
+                            </div>
+                            <span lang="en">High</span>
+                            <span lang="si">Veliko</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        <span lang="en">Virtual reality (VR):</span>
+                        <span lang="si">Navidezna resničnost (VR):</span>
+                    </td>
+                    <td class="left">
+                        <div class="demographic-slider-container">
+                            <span lang="en">Low</span>
+                            <span lang="si">Malo</span>
+                            <div class="demographic-slider">
+                                <input class="frange" type="range" id="vr" name="vr" min="1" max="5" value="3" list="markers">
+                                <datalist id="markers">
+                                    <option value="1" label="1"></option>
+                                    <option value="2" label="2"></option>
+                                    <option value="3" label="3"></option>
+                                    <option value="4" label="4"></option>
+                                    <option value="5" label="5"></option>
+                                </datalist>
+                            </div>
+                            <span lang="en">High</span>
+                            <span lang="si">Veliko</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+
+            <button id="submit" class="start">
+                <span lang="en">NEXT</span>
+                <span lang="si">NAPREJ</span>
+            </button>
+        </div>
+
+        <div class="logos">
+            <a href="http://lgm.fri.uni-lj.si/"><img class="lgmlogo" src="images/LGM-logo.png"></a>
+        </div>
+
+        <div class="lang-selection">
+            <a href="?lang=si"><img src="images/si.png" lang="en" class="lang"></a>
+            <a href="?lang=en"><img src="images/en.png" lang="si" class="lang"></a>
+        </div>
+    </div>
+
+    <script>
+        const english = document.querySelectorAll('[lang="en"]');
+        const slovene = document.querySelectorAll('[lang="si"]');
+
+        const searchParams = (new URL(window.location)).searchParams;
+
+        const lang = searchParams.get('lang') ?? localStorage.getItem('lang') ?? 'en';
+        localStorage.setItem('lang', lang);
+
+        if (lang === 'en') {
+            for (const element of slovene) {
+                element.remove();
+            }
+        } else if (lang === 'si') {
+            for (const element of english) {
+                element.remove()
+            }
+        }
+
+        if (lang === 'en') {
+            document.title = 'Distance estimation in volumetric data - User study';
+        } else if (lang === 'si') {
+            document.title = 'Ocenjevanje razdalj v volumetričnih podatkih - Uporabniška študija';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+library(tidyverse)
+library(jsonlite)
+
+# README!!!
+# 1. make sure to create the results folder
+
+pdf(NULL) # prevent Rplots.pdf from generating
+
+# read video data
+videos <- read_json('videos-alldata.json') %>%
+    tibble %>%
+    unnest_wider(everything())
+
+# read the database of user responses
+database <- read_json('database.json')
+
+userProperties <- c('age', 'gender', 'email', 'occupation', 'gaming', 'modeling', 'vr')
+
+users <- database %>%
+    enframe(name = 'sessionID') %>%
+    unnest_wider(value) %>%
+    select(sessionID, all_of(userProperties))
+
+responses <- database %>%
+    map(~ .x %>%
+        enframe(name = 'videoID') %>%
+        filter(!videoID %in% userProperties)
+        %>% unnest_wider(value)) %>%
+    bind_rows(.id = 'sessionID')
+
+# do analysis
+errors <- responses %>%
+    left_join(videos, join_by(videoID == hash)) %>%
+    mutate(error = distance.x - distance.y) %>%
+    select(sessionID, videoID, error, volume, method)
+
+# plot errors for each session
+errors %>%
+    mutate(error = abs(error)) %>%
+    ggplot() +
+        aes(x = sessionID, y = error) +
+        geom_boxplot()
+
+# plot errors for each volume
+errors %>%
+    mutate(error = abs(error)) %>%
+    ggplot() +
+        aes(x = volume, y = error) +
+        geom_boxplot()
+
+# plot errors for each method
+errors %>%
+    mutate(error = abs(error)) %>%
+    ggplot() +
+        aes(x = method, y = error) +
+        geom_boxplot()
+
+#summarize(mean_error = mean(error)) %>%
+
+# make a boxplot of the correct distances
+# videos %>%
+#     ggplot() +
+#         aes(x = '', y = distance) +
+#         geom_boxplot() +
+#         geom_jitter(width = 0.2)
+#
+# ggsave('results/distances_boxplot.pdf', width = 2, height = 7)

@@ -1,0 +1,28 @@
+{
+    "id": "752D7E35",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1694611303974.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "id": "0782a72ab5b84caf9161010e1a4befa5",
+        "name": "e",
+        "title": "e",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 93981597452456,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1694611303974,
+    "read_only": false,
+    "read_only_alternatives": []
+}

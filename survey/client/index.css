@@ -1,0 +1,148 @@
+html, body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    background-color: #ebebeb;
+    font-size: 16px;
+}
+
+h1 {
+    padding-bottom: -10px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    color: rgb(96, 96, 96);
+    padding-bottom: 16px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    color: rgb(96, 96, 96);
+}
+
+p {
+    text-align: justify;
+}
+
+a {
+    display: inline-block;
+}
+
+.green {
+    font-weight: bold;
+    color: #009900;
+}
+
+.pink {
+    font-weight: bold;
+    color: #dd00dd;
+}
+
+.grey {
+    font-weight: bold;
+    color: #999999;
+}
+
+.main {
+    margin: auto;
+    width: 960px;
+    padding: 10px;
+}
+
+.example {
+    width: 450px;
+    border: 2px solid rgb(160, 160, 160);
+    border-radius: 8px;
+}
+
+.lgmlogo {
+    height: 24px;
+}
+
+.ulfrilogo {
+    height: 72px;
+}
+
+.logos {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.start {
+    font-weight: 600;
+    font-size: 16px;
+    color: rgb(48, 48, 48);
+    text-decoration: none;
+    border: 2px solid rgb(48, 48, 48);
+    padding: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.tiny {
+    font-size: 10px;
+    color: #666;
+}
+
+.spacer {
+    height: 12px;
+}
+
+.form {
+    display: inline-block;
+}
+
+td.right {
+    font-style: italic;
+    text-align: right;
+    padding-right: 10px;
+    width: 180px;
+}
+
+td.left {
+    text-align: left;
+}
+
+.frange {
+    width: 160px;
+}
+
+datalist {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 100%;
+    width: 158px;
+}
+
+.lang-selection {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.invalid {
+    outline: 2px solid red;
+}
+
+.demographic-slider-container {
+    display: flex;
+    align-items: center;
+}
+
+.demographic-slider {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+
+.demographic-slider-container > span {
+    margin-left: 10px;
+    margin-right: 10px;
+}

@@ -1,0 +1,6 @@
+errors %>%
+  mutate(error = abs(error)) %>%
+  ggplot() +
+  aes(y = error) +
+  geom_boxplot()
+

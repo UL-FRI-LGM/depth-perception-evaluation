@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,500,700,800,900" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="logos">
+            <a href="https://www.fri.uni-lj.si/"><img class="ulfrilogo" src="images/UL-FRI.png"></a>
+        </div>
+
+        <h1 lang="si">Hvala za sodelovanje!</h1>
+        <h1 lang="en">Thank you for your time!</h1>
+
+        <div class="spacer"></div>
+
+        <a href="index.html" lang="en" class="start">BACK</a>
+        <a href="index.html" lang="si" class="start">NAZAJ</a>
+
+        <div class="logos">
+            <a href="http://lgm.fri.uni-lj.si/"><img class="lgmlogo" src="images/LGM-logo.png"></a>
+        </div>
+
+        <div class="lang-selection">
+            <a href="?lang=si"><img src="images/si.png" lang="en" class="lang"></a>
+            <a href="?lang=en"><img src="images/en.png" lang="si" class="lang"></a>
+        </div>
+    </div>
+
+    <script>
+        const english = document.querySelectorAll('[lang="en"]');
+        const slovene = document.querySelectorAll('[lang="si"]');
+
+        const searchParams = (new URL(window.location)).searchParams;
+
+        const lang = searchParams.get('lang') ?? localStorage.getItem('lang') ?? 'en';
+        localStorage.setItem('lang', lang);
+
+        if (lang === 'en') {
+            for (const element of slovene) {
+                element.remove();
+            }
+        } else if (lang === 'si') {
+            for (const element of english) {
+                element.remove()
+            }
+        }
+
+        if (lang === 'en') {
+            document.title = 'Distance estimation in volumetric data - User study';
+        } else if (lang === 'si') {
+            document.title = 'Ocenjevanje razdalj v volumetričnih podatkih - Uporabniška študija';
+        }
+    </script>
+</body>
+</html>

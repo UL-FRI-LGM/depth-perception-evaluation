@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Distance estimation in volume data - User Study Evaluation</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,500,700,800,900" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="logos">
+            <a href="https://www.fri.uni-lj.si/"><img class="ulfrilogo" src="images/UL-FRI.png"></a>
+        </div>
+
+        <h1 lang="en">Instructions</h1>
+        <h1 lang="si">Navodila</h1>
+
+        <p lang="en">The study consists of very short (5 seconds) videos, in which you will estimate the relative distance between the points in 3D space.</p>
+        <p lang="si">Študijo sestavljajo zelo kratki (5 sekundni) posnetki, v katerih boste ocenjevali relativno razdaljo med točkami v 3D prostoru.</p>
+
+        <p lang="en">When the video loads, press the play button. When the video stops playing, a <span class="green">green</span>, <span class="pink">pink</span>, and <span class="grey">grey</span> point will appear. Use the slider to estimate the relative distance of the <span class="grey">grey</span> point between the <span class="green">green</span> and <span class="pink">pink</span> points, as shown in the image below:</p>
+        <p lang="si">Ko se video naloži, pritisnite na gumb za predvajanje. Po predvajanem videu se bodo prikazale tri točke: <span class="green">zelena</span>, <span class="pink">rožnata</span> in <span class="grey">siva</span>. Z drsnikom nato po svojih najboljših močeh ocenite relativno razdaljo <span class="grey">sive</span> točke glede na <span class="green">zeleno</span> in <span class="pink">rožnato</span>, kot prikazuje spodnja slika:</p>
+
+        <img class="example" src="images/instructions.svg">
+
+        <p lang="en">With this button you can replay the video (max 1x per video):</p>
+        <p lang="si">S tem gumbom lahko ponovno predvajate video (največ 1x na video):</p>
+
+        <img src="images/replay.svg" width="64px">
+
+        <p lang="en">With this button you can hide/show the points if they obscure your view:</p>
+        <p lang="si">S tem gumbom lahko skrijete/prikažete točke, če vam zastirajo pogled:</p>
+
+        <img src="images/circle-hide.svg" width="64px">
+
+        <p lang="en">Completing the study will take around 45 minutes. You may refresh the site at any time, you can also come back to the website later to finish the study.</p>
+        <p lang="si">Reševanje bo trajalo okrog 45 minut. Spletno stran lahko kadarkoli osvežite, študijo lahko tudi prekinete in se na spletno stran vrnete kasneje, da študijo dokončate.</p>
+
+        <div class="spacer"></div>
+
+        <a lang="en" class="start" href="demographic.html">START</a>
+        <a lang="si" class="start" href="demographic.html">ZAČNI</a>
+
+        <div class="spacer"></div>
+
+        <div class="logos">
+            <a href="http://lgm.fri.uni-lj.si/"><img class="lgmlogo" src="images/LGM-logo.png"></a>
+        </div>
+
+        <div class="lang-selection">
+            <a href="?lang=si"><img src="images/si.png" lang="en" class="lang"></a>
+            <a href="?lang=en"><img src="images/en.png" lang="si" class="lang"></a>
+        </div>
+    </div>
+    <script>
+        const english = document.querySelectorAll('[lang="en"]');
+        const slovene = document.querySelectorAll('[lang="si"]');
+
+        const searchParams = (new URL(window.location)).searchParams;
+
+        const lang = searchParams.get('lang') ?? localStorage.getItem('lang') ?? 'en';
+        localStorage.setItem('lang', lang);
+
+        if (lang === 'en') {
+            for (const element of slovene) {
+                element.remove();
+            }
+        } else if (lang === 'si') {
+            for (const element of english) {
+                element.remove()
+            }
+        }
+
+        if (lang === 'en') {
+            document.title = 'Distance estimation in volumetric data - User study';
+        } else if (lang === 'si') {
+            document.title = 'Ocenjevanje razdalj v volumetričnih podatkih - Uporabniška študija';
+        }
+    </script>
+</body>
+</html>
